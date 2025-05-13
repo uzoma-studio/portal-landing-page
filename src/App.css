@@ -225,6 +225,18 @@
   margin-bottom: 1.5rem;
 }
 
+.success-message {
+  background-color: rgba(79, 70, 229, 0.1);
+  border: 1px solid var(--primary-color);
+  padding: 1.5rem;
+  border-radius: 10px;
+  margin: 2rem 0;
+  max-width: 400px;
+  margin-left: auto;
+  margin-right: auto;
+  font-family: var(--font-main);
+}
+
 @media (max-width: 768px) {
   .how-it-works-steps {
     grid-template-columns: 1fr;

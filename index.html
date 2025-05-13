@@ -12,5 +12,9 @@
   <body>
     <div id="root"></div>
     <script type="module" src="/src/main.jsx"></script>
+    <!-- Add this somewhere in the <body> section, but it will be hidden -->
+    <form name="portal-signup" netlify netlify-honeypot="bot-field" hidden>
+      <input type="email" name="email" />
+    </form>
   </body>
 </html>
