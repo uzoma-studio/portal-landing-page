@@ -1,11 +1,11 @@
 :root {
-  --primary-color: #9333ea;
-  --text-color: #fff;
-  --bg-color: #0a0a0a;
-  --bg-color-darker: #050505;
-  --bg-color-lighter: #121212;
-  --font-main: 'Space Mono', monospace;
-  --font-body: 'Helvetica', sans-serif;
+  --primary-color: #FFD602;
+  --text-color: #272727;
+  --bg-color: #fffaf0;
+  --bg-color-darker: #ccc8c0;
+  --bg-color-lighter: #fffbf3;
+  --font-main: 'Helvetica', sans-serif;
+  --font-body: 'Space Mono', monospace;
   --gradient-1: rgba(147, 51, 234, 0.1);
   --gradient-2: rgba(79, 70, 229, 0.1);
   --gradient-3: rgba(16, 16, 36, 0.2);
@@ -26,15 +26,11 @@ body {
   color: var(--text-color);
   line-height: 1.6;
   position: relative;
-  background: linear-gradient(
-    135deg,
-    var(--bg-color-darker) 0%,
-    var(--bg-color) 40%,
-    var(--bg-color-lighter) 80%,
-    var(--bg-color) 100%
-  );
   background-attachment: fixed;
   min-height: 100vh;
+  background-color: var(--bg-color);
+  background: #FFD602;
+  background: linear-gradient(0deg, rgba(255, 214, 2, 1) 0%, rgba(255, 240, 207, 1) 22%, rgba(255, 250, 240, 1) 100%);
 }
 
 body::before {
@@ -44,16 +40,6 @@ body::before {
   left: 0;
   width: 100%;
   height: 100%;
-  background: radial-gradient(
-    circle at 30% 40%,
-    rgba(147, 51, 234, 0.05) 0%,
-    rgba(10, 10, 10, 0) 60%
-  ),
-  radial-gradient(
-    circle at 70% 60%,
-    rgba(79, 70, 229, 0.05) 0%,
-    rgba(10, 10, 10, 0) 60%
-  );
   z-index: -1;
 }
 

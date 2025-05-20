@@ -6,26 +6,26 @@ const HowItWorks = () => {
       <div className="container">
         <h2 className="section-title">How It Works</h2>
         <p className="section-subtitle">
-          Portal allows you to build immersive digital spaces without writing a single line of code. Perfect for artists, creative brands and their communities
+            Portal makes it easy for creators to build intentional online communities who support them and their work
         </p>
         
         <div className="how-it-works-steps">
           <div className="step">
             <div className="step-number">01</div>
-            <h3 className="step-title">Create Your <i>World</i></h3>
-            <p>Design a customizable virtual environment that reflects your style.</p>
+            <h3 className="step-title">Create Your <i>Space</i></h3>
+            <p>Design a customisable virtual environment that reflects your voice, values, and creative energy.</p>
           </div>
           
           <div className="step">
             <div className="step-number">02</div>
             <h3 className="step-title">Add Your <i>Content</i></h3>
-            <p>Place objects that visitors can click to explore posts, pages, products and other content.</p>
+            <p>Insert your ideas, updates, events, or products - all in a format that feels engaging and true to you.</p>
           </div>
           
           <div className="step">
             <div className="step-number">03</div>
             <h3 className="step-title">Invite Your <i>Community</i></h3>
-            <p>Invite your audience to interact with you, with one another and with the world you have created.</p>
+            <p>Build stronger relationships with your community by offering them exclusive content, chatting directly with them and earning from subscriptions and product sales.</p>
           </div>
         </div>
       </div>

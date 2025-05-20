@@ -26,11 +26,11 @@ const Hero = () => {
       <div className="container">
         <div className='hero-content'>
           <div className='hero-text'>
-            <h1 className='left-align'>Design your<br />digital world</h1>
-            <p className='left-align'>Create immersive virtual spaces to showcase your art, products, or ideas and build your community. No coding required.</p>
+            <h1 className='left-align'>Grow your <br />community<br />your way</h1>
+            <p className='left-align'>Portal helps artists and creative brands turn their audience into a thriving, connected community</p>
             
             <div className="hero-bottom">
-              <h3 className='left-align'>Digital Playgrounds for Creative Communities</h3>
+              {/* <h3 className='left-align'>Digital Playgrounds for Creative Communities</h3> */}
               <div className="hero-buttons">
                 <button 
                   className="btn btn-outline"

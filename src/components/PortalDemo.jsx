@@ -12,7 +12,7 @@ const PortalDemo = () => {
         
         <div className="demo-content">
           <div className="demo-visual">
-            <div style={{ border: '2px solid #9333ea', borderRadius: '10px', overflow: 'hidden' }}>
+            <div style={{ borderRadius: '10px', overflow: 'hidden' }}>
               <img 
                 src={demoSpaceImage} 
                 alt="Portal Demo Space" 
@@ -26,7 +26,7 @@ const PortalDemo = () => {
             <p className="featured-tag right-align">Featured Space</p>
             <h3 className="demo-title right-align">Portal Demo</h3>
             <p className="right-align" style={{ margin: '1rem 0' }}>
-              A sample space to illustrate what's possible with Portal. Click on the pulsating hotspots to interact with the objects in the space.
+              Explore a sample creator space - click on the pulsating hotspots to engage with the content.
             </p>
             <div className="right-align">
               <a 

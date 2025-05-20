@@ -3,35 +3,35 @@ import React from 'react';
 const Features = () => {
   const featuresList = [
     {
+      icon: "🖼️",
+      title: "Custom Design",
+      description: "Create a digital space that reflects your voice, values, and creative energy."
+    },
+    {
       icon: "📝",
       title: "Updates and Blogposts",
-      description: "Share your creative process and updates directly in your virtual space, allowing visitors to engage with your content in a more immersive way."
+      description: "Keep your people in the loop with behind-the-scenes updates, new drops, and thoughts from your creative journey"
     },
     {
       icon: "🎵",
       title: "Media Player",
-      description: "Embed audio and video content within your space, perfect for musicians, podcasters, and filmmakers to showcase their work in context."
+      description: "Add audio and video to bring your creative practice to life - great for musicians, filmmakers, or curators."
     },
     {
       icon: "💬",
       title: "Community Messaging",
-      description: "Enable real-time conversations and feedback within your space, fostering deeper connections between you and your audience."
+      description: "Foster real-time conversations and feedback creating a hub for connection and interaction."
     },
     {
       icon: "📰",
       title: "Auto-generated Newsletter",
-      description: "Automatically compile your updates into beautiful newsletters to keep your audience engaged, even when they're not in your space."
+      description: "Turn your updates into beautiful newsletters automatically, so your community stays engaged even when they’re not online."
     },
     {
       icon: "🛒",
       title: "Shop",
-      description: "Sell your products, digital assets, or services directly from your virtual space with seamless e-commerce integration."
+      description: "Sell subscriptions and products and let your community support you without friction."
     },
-    {
-      icon: "🔗",
-      title: "Cross-platform Integration",
-      description: "Connect your existing social media and content platforms to create a unified hub for all your creative output."
-    }
   ];
 
   return (
@@ -39,7 +39,7 @@ const Features = () => {
       <div className="container">
         <h2 className="section-title">Features</h2>
         <p className="section-subtitle">
-          Everything you need to build and manage your digital presence in one immersive space.
+          Everything you need to build and manage an engaged community around your creative practice.
         </p>
         
         <div className="features-grid">
@@ -51,6 +51,11 @@ const Features = () => {
             </div>
           ))}
         </div>
+        
+        <br /><br />
+        <p className="section-subtitle">
+          And more to come...
+        </p>
       </div>
     </section>
   );

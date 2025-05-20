@@ -48,7 +48,7 @@ const CallToAction = () => {
               required
             />
             
-            <button type="submit" className="btn btn-primary">Get Updates</button>
+            <button type="submit" className="btn btn-primary" style={{backgroundColor: 'var(--bg-color)'}}>Get Updates</button>
           </form>
         )}
       </div>
