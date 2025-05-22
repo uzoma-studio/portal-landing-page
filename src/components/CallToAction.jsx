@@ -1,56 +1,47 @@
-import React, { useState } from 'react';
+import React from 'react';
 
 const CallToAction = () => {
-  const [email, setEmail] = useState('');
-  const [submitted, setSubmitted] = useState(false);
-
-  const handleSubmit = (e) => {
-    e.preventDefault();
-    // For Netlify Forms to work properly, we actually don't need to prevent the default form submission
-    // But we'll handle the UI state here to show a success message
-    setSubmitted(true);
-    console.log('Email submitted:', email);
-  };
-
   return (
     <section className="cta-section" id="sign-up">
-      <div className="container cta-container">
-        <h2 className="cta-title">Ready to Explore?</h2>
+      <div className="container">
+        <h2 className="section-title cta-title">Sound Exciting?</h2>
+        <p className="cta-description">
+          Sign up and be ready to jump into the Portal when we launch
+        </p>
+
+        <div className="tally-form-container">
+          <iframe 
+            src="https://tally.so/embed/3Xyd6Y?hideTitle=1&transparentBackground=1&dynamicHeight=1"
+            loading="lazy"
+            width="100%"
+            height="579"
+            frameBorder="0"
+            marginHeight="0" 
+            marginWidth="0"
+            title="Portal Sign Up"
+          ></iframe>
+        </div>
         
-        {submitted ? (
-          <div className="success-message">
-            <p>Thanks for signing up! We'll keep you updated about Portal.</p>
+        {/* <form name="portal-signup" method="POST" data-netlify="true" netlify-honeypot="bot-field">
+          <input type="hidden" name="form-name" value="portal-signup" />
+          <div className="hidden" style={{ display: 'none' }}>
+            <label>
+              Don't fill this out if you're human: <input name="bot-field" />
+            </label>
           </div>
-        ) : (
-          <form 
-            name="portal-signup" 
-            method="POST" 
-            data-netlify="true"
-            netlify-honeypot="bot-field"
-            onSubmit={handleSubmit}
-            className='cta-container'
-          >
-            {/* Hidden inputs required for Netlify Forms */}
-            <input type="hidden" name="form-name" value="portal-signup" />
-            <p className="hidden" style={{ display: 'none' }}>
-              <label>
-                Don't fill this out if you're human: <input name="bot-field" />
-              </label>
-            </p>
-            
+          
+          <div className="cta-form">
             <input
               type="email"
               name="email"
               className="email-input"
-              placeholder="ade@portal.space"
-              value={email}
-              onChange={(e) => setEmail(e.target.value)}
+              placeholder="youremail@example.com"
               required
             />
             
-            <button type="submit" className="btn btn-primary">Get Updates</button>
-          </form>
-        )}
+            <button type="submit" className="btn btn-signup">Sign Up</button>
+          </div>
+        </form> */}
       </div>
     </section>
   );

@@ -1,65 +1,102 @@
-import React from 'react';
+import React, { useState, useEffect, useRef } from 'react';
+import heroImage from '../assets/space.png';
 
 const Hero = () => {
-  // Replace this with the file ID of your Google Drive video
-  // Example: For a URL like https://drive.google.com/file/d/1a2b3c4d5e6f7g8h9i0j/view
-  // The file ID would be: 1a2b3c4d5e6f7g8h9i0j
-  const googleDriveFileId = '1de_T9rfh4gRn2J_WjXggYgKU2r-8ni6Q';
-  
-  // Navigation functions
-  const scrollToDemo = () => {
-    const demoSection = document.getElementById('portal-demo');
-    if (demoSection) {
-      demoSection.scrollIntoView({ behavior: 'smooth' });
+  // Words that will cycle
+  const words = ["most authentic", "easiest", "most fun", "audacious", "most creative"];
+  const [currentWord, setCurrentWord] = useState('');
+  const [isDeleting, setIsDeleting] = useState(false);
+  const [wordIndex, setWordIndex] = useState(0);
+  const [typingSpeed, setTypingSpeed] = useState(150);
+  const [mousePosition, setMousePosition] = useState({ x: 0, y: 0 });
+  const heroRef = useRef(null);
+
+  // Typing effect
+  useEffect(() => {
+    const typeWord = () => {
+      // Current word being processed
+      const fullWord = words[wordIndex];
+      
+      // Set typing speed based on whether we're deleting or typing
+      const speed = isDeleting ? typingSpeed / 2 : typingSpeed;
+      
+      // If deleting, remove a character, else add a character
+      if (isDeleting) {
+        setCurrentWord(prev => prev.substring(0, prev.length - 1));
+      } else {
+        setCurrentWord(prev => fullWord.substring(0, prev.length + 1));
+      }
+      
+      // If word is complete, start deleting after a pause
+      if (!isDeleting && currentWord === fullWord) {
+        // Pause at the end of typing
+        setTimeout(() => setIsDeleting(true), 1200);
+      } 
+      // If finished deleting, move to next word
+      else if (isDeleting && currentWord === '') {
+        setIsDeleting(false);
+        setWordIndex((prev) => (prev + 1) % words.length);
+      }
+    };
+    
+    // Set the timer for typing effect
+    const timer = setTimeout(typeWord, isDeleting ? typingSpeed / 2 : typingSpeed);
+    
+    // Cleanup timeout
+    return () => clearTimeout(timer);
+  }, [currentWord, isDeleting, wordIndex, words, typingSpeed]);
+
+  // Mouse move handler for ripple effect
+  const handleMouseMove = (e) => {
+    if (heroRef.current) {
+      const rect = heroRef.current.getBoundingClientRect();
+      setMousePosition({
+        x: e.clientX - rect.left,
+        y: e.clientY - rect.top
+      });
     }
   };
-  
+
+  // Scroll to signup section
   const scrollToSignUp = () => {
     const signUpSection = document.getElementById('sign-up');
     if (signUpSection) {
       signUpSection.scrollIntoView({ behavior: 'smooth' });
     }
   };
-  
+
   return (
-    <section className="hero">
+    <section 
+      className="hero-section" 
+      ref={heroRef}
+      onMouseMove={handleMouseMove}
+      style={{
+        '--mouse-x': `${mousePosition.x}px`,
+        '--mouse-y': `${mousePosition.y}px`
+      }}
+    >
       <div className="container">
-        <div className='hero-content'>
-          <div className='hero-text'>
-            <h1 className='left-align'>Design your<br />digital world</h1>
-            <p className='left-align'>Create immersive virtual spaces to showcase your art, products, or ideas and build your community. No coding required.</p>
-            
-            <div className="hero-bottom">
-              <h3 className='left-align'>Digital Playgrounds for Creative Communities</h3>
-              <div className="hero-buttons">
-                <button 
-                  className="btn btn-outline"
-                  onClick={scrollToDemo}
-                >
-                  Explore
-                </button>
-                <button 
-                  className="btn btn-primary"
-                  onClick={scrollToSignUp}
-                >
-                  Sign Up
-                </button>
-              </div>
-            </div>
-          </div>
-          
-          <div className='hero-video'>
-            <div className='video-container'>
-              <iframe 
-                src={`https://drive.google.com/file/d/${googleDriveFileId}/preview`}
-                title="Portal Demo Video" 
-                width="640" 
-                height="360"
-                frameBorder="0" 
-                allowFullScreen
-              ></iframe>
-            </div>
-          </div>
+        <div className="hero-img">
+          <img src={heroImage} alt="Portal creative community" style={{width: '20%'}}/>
+        </div>
+        <h1 className="hero-title">
+          The <span className="cycling-word">{currentWord}<span className="cursor"></span></span> way for <br/>
+          creatives to build community
+        </h1>
+        
+        <div className="hero-buttons">
+          <button 
+            className="btn btn-explore"
+            onClick={() => document.getElementById('portal-features')?.scrollIntoView({ behavior: 'smooth' })}
+          >
+            Explore
+          </button>
+          <button 
+            className="btn btn-signup"
+            onClick={scrollToSignUp}
+          >
+            Sign Up
+          </button>
         </div>
       </div>
     </section>
