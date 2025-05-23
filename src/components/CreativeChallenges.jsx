@@ -50,16 +50,19 @@ const CreativeChallenges = () => {
   const challenges = [
     {
       title: "Your work gets drowned out by the noise of 'the Algorithm'",
+      explanation: "53% of creators say it's harder to reach their followers today than five years ago*. Your best work can disappear from feeds within hours regardless of its merit.",
       image: challenge1,
       illustration: "algorithm-noise"
     },
     {
       title: "You have to do internet gymnastics to manage all your social media accounts",
+      explanation: "Creators are forced to fragment their presence across multiple platforms, each with different formats, rules, and audiences. This constant context-switching drains creative energy and splits your community.",
       image: challenge2,
       illustration: "social-media-gymnastics"
     },
     {
       title: "You're worried that TikTok might get banned and take your audience with it",
+      explanation: "Building on platforms you don't control means risking everything on decisions beyond your influence. When a platform changes policies or disappears entirely, years of community building can vanish overnight.",
       image: challenge3,
       illustration: "tiktok-ban"
     }
@@ -87,13 +90,19 @@ const CreativeChallenges = () => {
               </div>
               <div className="challenge-content">
                 <p className="challenge-text">{challenge.title}</p>
+                <p className="challenge-explanation">{challenge.explanation}</p>
               </div>
             </div>
           ))}
         </div>
         
         <div className="challenges-summary" ref={summaryRef}>
-          <p>In summary, it's now more difficult than ever for creators to connect with the audiences that want to support them online</p>
+            <p>Over half of the $290B that encompasses the potential of today's creator economy comes from direct-to-fan value...[these] are more stable revenue streams, contributing to a clearer path to long-term success.</p>
+            <br />
+            <p>"I've seen creators with huge audiences come and go. The ones who have longevity in the space are the ones who deeply connect with their fans."</p>
+            <cite style={{marginLeft: '1rem'}}> - Amanda Rach Lee, Video creator and artist</cite>
+          <br /><br />
+          <small>* Source: <a href="https://stateofcreate.co" target="_blank" rel="noopener noreferrer">Patreon State of Create</a></small>
         </div>
       </div>
     </section>

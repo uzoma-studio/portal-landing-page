@@ -47,7 +47,7 @@ const PortalFeatures = () => {
               <div className="feature-image-container">
                 <div className="feature-browser-mockup">
                   <div className="feature-browser-content">
-
+                    <img src={feature.image} alt={feature.title} />
                   </div>
                 </div>
               </div>
